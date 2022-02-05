@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@drawable/calc">
+
 
     <TextView
         android:id="@+id/mathematics_result"
@@ -203,8 +205,8 @@
         android:textSize="@dimen/button_del_size"
         app:layout_constraintBottom_toTopOf="@id/button_9"
         app:layout_constraintEnd_toStartOf="@id/button_divide"
-        app:layout_constraintTop_toTopOf="@id/button_plus_minus"
-        app:layout_constraintStart_toEndOf="@id/button_plus_minus" />
+        app:layout_constraintStart_toEndOf="@id/button_plus_minus"
+        app:layout_constraintTop_toTopOf="@id/button_plus_minus" />
 
     <Button
         android:id="@+id/button_divide"
