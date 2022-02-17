@@ -1,10 +1,11 @@
 package com.geekbrains.mycalculatorjava;
-
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class SetTheme extends AppCompatActivity implements View.OnClickListener {
@@ -34,7 +35,7 @@ public class SetTheme extends AppCompatActivity implements View.OnClickListener 
     public void onClick(View view) {
         switch (view.getId()) {
             case (R.id.Theme_one): {
-                setAppTheme(R.style.Theme_HomeWorkOne);
+                setAppTheme(R.style.MyTheme);
                 recreate();
                 break;
             }
@@ -72,7 +73,7 @@ public class SetTheme extends AppCompatActivity implements View.OnClickListener 
 
     protected int getAppTheme() {
         SharedPreferences sharedPref = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
-        return sharedPref.getInt(PREF_THEME_KEY, R.style.Theme_HomeWorkOne);
+        return sharedPref.getInt(PREF_THEME_KEY, R.style.MyTheme);
     }
 
 

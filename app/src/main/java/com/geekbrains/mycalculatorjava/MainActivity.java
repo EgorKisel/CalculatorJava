@@ -8,9 +8,12 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    private static final String PREF_NAME = "key_pref";
+    private static final String PREF_THEME_KEY = "key_pref_theme";
     Calculator calculator = new Calculator();
 
     Button button0;
@@ -33,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button buttonDel;
     Button buttonDivide;
     TextView mathematicsResult;
+    Button btn_setTheme;
 
 
 
@@ -88,9 +92,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonDel = findViewById(R.id.button_del);
         buttonDivide = findViewById(R.id.button_divide);
         mathematicsResult = findViewById(R.id.mathematics_result);
+        btn_setTheme = findViewById(R.id.SetTheme);
     }
 
     private void setButton() {
+        btn_setTheme.setOnClickListener(this);
         button0.setOnClickListener(this);
         button1.setOnClickListener(this);
         button2.setOnClickListener(this);
@@ -273,10 +279,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 break;
             }
-            default: {
-            }
 
         }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 123 && resultCode == RESULT_OK) {
+            setAppTheme(data.getIntExtra("key", R.style.Theme_MyCalculatorJava));
+            recreate();
+        }
+
     }
     protected void setAppTheme(int codestyle) {
         SharedPreferences sharedPreferences = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
@@ -287,7 +301,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     protected int getAppTheme() {
         SharedPreferences sharedPreferences = getSharedPreferences(PREF_NAME, MODE_PRIVATE);
-        return sharedPreferences.getInt(PREF_THEME_KEY, R.style.Theme_HomeWorkOne);
+        return sharedPreferences.getInt(PREF_THEME_KEY, R.style.Theme_MyCalculatorJava);
     }
 
 }

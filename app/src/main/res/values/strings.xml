@@ -19,4 +19,9 @@
     <string name="_plus_minus">+/-</string>
     <string name="_del">DEL</string>
     <string name="_divide">/</string>
+    <string name="Change_theme">Выбрать тему:</string>
+    <string name="Standart_Theme">Стандартная</string>
+    <string name="Blue_Theme">Голубая</string>
+    <string name="Green_Theme">Зеленая</string>
+    <string name="apply">Применить</string>
 </resources>
