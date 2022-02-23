@@ -7,4 +7,6 @@
     <dimen name="button_text_size_horizontal">28sp</dimen>
     <dimen name="Button_theme_width">300dp</dimen>
     <dimen name="Button_theme_height">40dp</dimen>
+    <dimen name="textView_indent">10dp</dimen>
+    <dimen name="layout_width_0">0dp</dimen>
 </resources>
