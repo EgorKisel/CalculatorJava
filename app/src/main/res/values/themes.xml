@@ -55,4 +55,18 @@
         <item name="colorOnTertiaryContainer">@color/green</item>
         <item name="android:statusBarColor">@color/green</item>
     </style>
+
+    <style name="myButtonStyle" parent= "Widget.MaterialComponents.Button">
+        <item name="android:textSize">@dimen/button_text_size</item>
+    </style>
+
+    <style name="myButtonBackground1" parent="Widget.MaterialComponents.Button">
+        <item name="android:textSize">@dimen/button_text_size</item>
+        <item name="android:backgroundTint">@color/backgroundTint_1</item>
+    </style>
+
+    <style name="myButtonBackground2" parent="Widget.MaterialComponents.Button">
+        <item name="android:textSize">@dimen/button_text_size</item>
+        <item name="android:backgroundTint">@color/backgroundTint_2</item>
+    </style>
 </resources>
